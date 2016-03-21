@@ -1,0 +1,72 @@
+Books
+
+
+Title: Visual C#(book)
+ISBN: 123A456B
+Length: 1232 pages
+Status: Available
+
+
+
+Title: Javascript For Kids(book)
+ISBN: 456D789E
+Length: 9004 pages
+Status: Available
+
+
+
+Title: Programming for Dummies(book)
+ISBN: 789F456G
+Length: 123 pages
+Status: Available
+
+
+
+Magazines
+
+
+Title: Sports Illustrated(magazine)
+ISBN: MAG1234
+Length: 103 pages
+Status: Available
+
+
+
+Title: Time(magazine)
+ISBN: MAG2345
+Length: 107 pages
+Status: Available
+
+
+
+Title: Gun World(magazine)
+ISBN: MAG4567
+Length: 212 pages
+Status: Available
+
+
+
+DVDs
+
+
+Title: Top Gun(dvd)
+ISBN: D123456
+Length: 110 minutes
+Status: Available
+
+
+
+Title: SWAT(dvd)
+ISBN: D23456
+Length: 117 minutes
+Status: Available
+
+
+
+Title: Need For Speed(dvd)
+ISBN: D34567
+Length: 0 minutes
+Status: Available
+
+
+
