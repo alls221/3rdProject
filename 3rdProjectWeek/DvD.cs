@@ -27,7 +27,7 @@ namespace _3rdProjectWeek
         }
         public override void EditResource(string toEdit)
         {
-            if (this.Title == toEdit)
+            if (toEdit.Equals(this.Title, StringComparison.CurrentCultureIgnoreCase))
             {
                 Console.WriteLine("What would you like to edit?");
                 Console.WriteLine("1- Title\n 2-ISBN\n 3-Length in minutes");

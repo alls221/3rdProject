@@ -31,14 +31,15 @@ namespace _3rdProjectWeek
         }
         public virtual void CheckOut(Dictionary<string, List<string>> students, string Title) // changes status to "checked out" and generates a due date
         {
-            if (this.Title == Title)
+            if (Title.Equals(this.Title,StringComparison.CurrentCultureIgnoreCase))
             {
                 StreamWriter checkedOut = new StreamWriter("checkedout.txt");
                 Console.WriteLine("Enter the Name of the student");
                 string name = Console.ReadLine();
                 if (students.ContainsKey(name))
                 {
-                    StreamWriter studentFiler = new StreamWriter(name + ".txt");
+                    string fileName = name.ToUpper() + ".txt";
+                    StreamWriter studentFiler = new StreamWriter(fileName);
                     if (Status == "Available")
                     {
                        
@@ -70,7 +71,7 @@ namespace _3rdProjectWeek
         }
         public virtual void CheckIn(Dictionary<string, List<string>> students, string Title) // changes status to "Available"- this is not currently work
         {
-            if (this.Title == Title)
+            if (Title.Equals(this.Title, StringComparison.CurrentCultureIgnoreCase))
             {
                 Console.WriteLine("Enter the Name of the student");
                 string name = Console.ReadLine();
@@ -81,6 +82,13 @@ namespace _3rdProjectWeek
                         Status = "Available";
                         students[name].Remove(title);
                         Console.WriteLine("{0} has retuned {1}", name, Title);
+                        string fileName = name.ToUpper() + ".txt";
+                        StreamWriter studentFiler = new StreamWriter(fileName);
+                        using (studentFiler)
+                        {
+                            studentFiler.WriteLine(" ");
+                        }
+                        
                     }
                     else
                     {
@@ -96,7 +104,7 @@ namespace _3rdProjectWeek
         public virtual void EditResource(string toEdit)
         {
 
-            if (this.Title == toEdit)
+            if (toEdit.Equals(this.Title, StringComparison.CurrentCultureIgnoreCase))
             {
                 Console.WriteLine("What would you like to edit?");
                 Console.WriteLine("1- Title\n 2-ISBN\n 3-Length");

@@ -123,13 +123,13 @@ namespace _3rdProjectWeek
                         resourceFile.WriteLine("\n\n");
                     }
                 }
-                Dictionary<string, List<string>> students = new Dictionary<string, List<string>>()
+                Dictionary<string, List<string>> students = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase)
                 {
                     { "Ashley",  new List<string> () },
                     { "Krista", new List<string> () },
                     { "Imari", new List <string>() },
                     { "Lawrence", new List <string>() },
-                    { "Jacob ", new List<string>() }
+                    { "Jacob", new List<string>() }
                 };
                 StreamWriter studentFile = new StreamWriter("students.txt");
                 using (studentFile)
@@ -220,7 +220,8 @@ namespace _3rdProjectWeek
                             string name = Console.ReadLine();
                            try
                             {
-                                StreamReader studentAccount = new StreamReader(students[name] + ".txt");
+                                string fileName = name.ToUpper() + ".txt";
+                                StreamReader studentAccount = new StreamReader(fileName);
                                 using (studentAccount)
                                 {
                                     string thisAccount = studentAccount.ReadToEnd();
@@ -229,10 +230,10 @@ namespace _3rdProjectWeek
                             }
                             catch (System.IO.FileNotFoundException)
                             {
-                                Console.WriteLine("{0} has nothing checked out",name);
+                              Console.WriteLine("{0} has nothing checked out",name);
                             }
 
-                          break;
+                            break;
                         }
                     case 5: // view all students
                         {
@@ -361,7 +362,7 @@ namespace _3rdProjectWeek
         {
             while (true)
             {
-                Console.WriteLine("Select a menu option by menu");
+                Console.WriteLine("Select a menu option by number");
                 string input = Console.ReadLine();
                 int choice;
                 if (int.TryParse(input, out choice) == true)
